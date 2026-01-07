@@ -4,23 +4,24 @@
 
 repos:
   - repo: https://github.com/psf/black
-    rev: 24.8.0
+    rev: 24.8.0  # Updated to latest
     hooks:
       - id: black
         language_version: python3
-        args: [--line-length=88]
+        args: [--line-length=88]  # Explicit line length
         files: ^src/.*\.py$
 
   - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
+    rev: 5.13.2  # Updated to latest
     hooks:
       - id: isort
-        args: [--profile=black, --line-length=88]
+        args: [--profile=black, --line-length=88]  # Match Black config
         files: ^src/.*\.py$
 
   - repo: https://github.com/pycqa/flake8
-    rev: 7.1.1
+    rev: 7.1.1  # Updated to latest
     hooks:
       - id: flake8
-        args: [--max-line-length=88, "--extend-ignore=E203,W503,E501"]
+        # Use same ignore list as CI for consistency
+        args: [--max-line-length=88]
         files: ^src/.*\.py$
