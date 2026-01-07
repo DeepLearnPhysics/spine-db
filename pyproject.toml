@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spine-db"
+version = "0.1.0"
+description = "Metadata indexing and browsing for SPINE production runs"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "sqlalchemy>=1.4.0",
+    "psycopg2-binary>=2.9.0",
+    "python-dotenv>=1.0.0",
+    "h5py>=3.0.0",
+    "dash>=2.0.0",
+    "dash-bootstrap-components>=1.0.0",
+]
+
+[project.scripts]
+spine-db = "spine_db.cli:main"
+
+[tool.setuptools]
+packages = ["spine_db"]
+package-dir = {"" = "src"}
