@@ -5,17 +5,10 @@ from datetime import datetime
 from typing import Optional
 
 from dotenv import load_dotenv
-from sqlalchemy import (
-    Column,
-    DateTime,
-    Engine,
-    Integer,
-    String,
-    create_engine,
-)
+from sqlalchemy import Column, DateTime, Engine, Integer, String, create_engine
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import Session, sessionmaker
 from sqlalchemy.pool import NullPool
-from sqlalchemy.ext.declarative import declarative_base
 
 # Load environment variables from spine_db/.env file
 load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
